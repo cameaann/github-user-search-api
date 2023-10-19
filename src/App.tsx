@@ -1,4 +1,6 @@
 import React from "react";
+import ProfileInfo from "./components/profileInfo";
+import SearchBox from "./components/searchBox";
 
 function App() {
   return (
@@ -8,8 +10,8 @@ function App() {
           <h2>Devfinder</h2>
           <button className="btn switch-mode">Dark</button>
         </header>
-        <div className="search-box"></div>
-        <div className="result-box"></div>
+        <SearchBox/>
+        <ProfileInfo/>
       </main>
     </div>
   );
