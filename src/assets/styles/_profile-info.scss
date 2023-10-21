@@ -11,6 +11,7 @@
   display: grid;
   grid-template-columns: 30% 70%;
 
+
   .avatar {
     width: 7.3125rem;
     height: 7.3125rem;
@@ -18,22 +19,40 @@
     flex-shrink: 0;
   }
   .details {
+
   }
 }
 
 .box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .nickname {
+  font-size: 1.625rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color:$darkGrey;
 }
 .date {
+  color:$grey;
 }
 .nickteg {
+  font-size: 1rem;
+  color: $blue;
+  margin-bottom: 1.25rem;
 }
 .biographi {
+  font-size: .9375rem;
+  font-weight: 400;
+  opacity: 0.75;
+  color:$greyBlue;
+  margin-bottom: 2rem;
 }
 .activity {
   width: 25.12rem;
-  padding: 0.94rem;
+  padding: 0.94rem 2rem;
   height: 3.4325rem;
   flex-shrink: 0;
   border-radius: 0.625rem;
@@ -41,6 +60,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-row: auto;
+  margin-bottom: 2.31rem;
+
+  .activity-name{
+    font-size: 0.8125rem;
+    color:$greyBlue;
+  }
 
   .count {
     color: $darkGrey;
@@ -54,6 +79,17 @@
 }
 .social-media {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.3fr 1fr;
     grid-template-rows: auto;
+
+    .social-item{
+      margin-bottom: 1.19rem;
+    }
+    .item-name{
+      font-size: .93rem;
+      color: $greyBlue;
+    }
+    .item-icon{
+      margin-right: 1.3rem;
+    }
 }
