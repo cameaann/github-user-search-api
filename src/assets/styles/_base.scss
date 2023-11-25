@@ -56,16 +56,29 @@ main {
   align-items: center;
   justify-content: space-evenly;
 }
-.search-box{
-  width:35rem;
-  .icon-search{
+.search-box {
+  width: 35rem;
+  display: flex;
+  align-items: center;
+  margin-inline-start: 2rem;
+  .icon-search {
     margin-right: 1rem;
+    font-size: 1.5rem;
+    width: 1.50363rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+
+    &:hover{
+      cursor: pointer;
+      
+    }
   }
 }
 
-.input-search{
+.input-search {
   border: none;
   width: 90%;
+  font-size: 1.25rem;
 }
 .theme {
   background: $black;

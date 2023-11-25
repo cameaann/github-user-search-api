@@ -14,7 +14,7 @@ function SearchBox() {
         <input className="input-search" type="text" placeholder="Search Github username" />
       </div>
 
-      <button>Search</button>
+      <button className="searchBtn">Search</button>
     </div>
   );
 }
