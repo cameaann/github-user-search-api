@@ -1,18 +1,17 @@
 import Icon from "./Icon";
-import { useDarkMode } from "../DarkModeContext";
+import { useTheme } from "./useTheme";
 
 export const Switch = () => {
-  const { darkMode, toggleDarkMode } = useDarkMode();
+    const [theme, handleClick] = useTheme('light');
+
   return (
     <header className="app-header">
       <h2 className="app-header-title">devfinder</h2>
-      <button className="btn" onClick={toggleDarkMode}>
-        <span className="btn-word">
-          {darkMode ? "Light" : "Dark"}
-        </span>
+      <button className="btn" onClick ={handleClick}>
+        <span className="btn-word">{ theme === "light" ? "Dark" : "Light" }</span>
         <Icon
-          className= {darkMode ? "item-icon icon-sun" : "item-icon icon-moon"}
-          icon= {darkMode ? "sun" : "moon"}
+          className={theme === 'light' ? "item-icon icon-moon" : "item-icon icon-sun"}
+          icon={theme === 'light' ? "moon" : "sun"}
           size={16}
           color="#4b6a9b"
           fill="#4b6a9b"

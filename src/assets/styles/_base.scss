@@ -48,7 +48,7 @@ main {
   height: 4.3125rem;
   flex-shrink: 0;
   border-radius: 0.9375rem;
-  background: #fefefe;
+  background: $whiteVar;
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
   margin-bottom: 1.5rem;
   display: flex;
@@ -87,7 +87,7 @@ main {
     color: $greyBlue;
   }
 
-  &:focus{
+  &:focus {
     caret-color: $blue;
     color: $dark;
     outline: none;
@@ -101,5 +101,64 @@ main {
   .dark-mode {
     background: $black;
     color: $white;
+  }
+}
+
+[data-theme="dark"] {
+  background: $black;
+  color: $white;
+  fill: $white;
+
+  .app-header {
+    &-title {
+      color: $white;
+    }
+  }
+
+  .btn {
+    color: $white;
+  }
+
+  .search-container {
+    background-color: $darkBlue;
+  }
+  .input-search {
+    background-color: inherit;
+
+    &::placeholder {
+      color: $white;
+    }
+  }
+
+  .profile-info {
+    background: $darkBlue;
+  }
+  .nickname {
+    color: $white;
+  }
+  .date {
+    color: $white;
+  }
+  .biographi {
+    color: $white;
+  }
+  .activity {
+    background: $black;
+  }
+  .activity-name {
+    color: $white;
+  }
+  div.count {
+    color: $white;
+  }
+  span.item-name,
+  a.item-name {
+    color: $white;
+  }
+  svg[class^="icon-"],
+  [class*=" icon-"] {
+    path {
+      fill: $white !important;
+    }
   }
 }
