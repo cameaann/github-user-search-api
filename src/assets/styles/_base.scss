@@ -15,7 +15,7 @@
   font-size: 16px;
 }
 
-.container-wrap {
+main{
   height: 100vh;
   width: 100%;
   transform: translate(0, 20%);
@@ -24,9 +24,8 @@
   // justify-content: center;
 }
 
-main {
+.container-wrap {
   width: 45.625rem;
-  height: 27.75rem;
   flex-shrink: 0;
   margin: 0 auto;
 }
@@ -70,7 +69,7 @@ main {
 
     &:hover{
       cursor: pointer;
-      
+
     }
   }
 }
