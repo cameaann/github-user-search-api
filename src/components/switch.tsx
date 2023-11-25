@@ -15,6 +15,7 @@ export const Switch = () => {
           icon= {darkMode ? "sun" : "moon"}
           size={16}
           color="#4b6a9b"
+          fill="#4b6a9b"
         ></Icon>
       </button>
     </header>

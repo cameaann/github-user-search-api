@@ -2,7 +2,7 @@
 
 :root {
   background: $lightGrey;
-  color: $darkGrey;
+  color: $greyBlue;
 }
 
 *,
@@ -15,7 +15,7 @@
   font-size: 16px;
 }
 
-main{
+main {
   height: 100vh;
   width: 100%;
   transform: translate(0, 20%);
@@ -60,6 +60,7 @@ main{
   display: flex;
   align-items: center;
   margin-inline-start: 2rem;
+
   .icon-search {
     margin-right: 1rem;
     font-size: 1.5rem;
@@ -67,9 +68,11 @@ main{
     height: 1.5rem;
     flex-shrink: 0;
 
-    &:hover{
+    path {
+      fill: $blue !important;
+    }
+    &:hover {
       cursor: pointer;
-
     }
   }
 }
@@ -78,6 +81,17 @@ main{
   border: none;
   width: 90%;
   font-size: 1.25rem;
+  color: $greyBlue;
+
+  &::placeholder {
+    color: $greyBlue;
+  }
+
+  &:focus{
+    caret-color: $blue;
+    color: $dark;
+    outline: none;
+  }
 }
 .theme {
   background: $black;

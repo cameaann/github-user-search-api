@@ -10,6 +10,7 @@ function SearchBox() {
           icon="search"
           size={16}
           color="#4b6a9b"
+          fill="#0079FF"
         ></Icon>
         <input className="input-search" type="text" placeholder="Search Github username" />
       </div>
