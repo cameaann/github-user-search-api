@@ -1,4 +1,4 @@
-import { ChangeEvent, useState} from "react";
+import { ChangeEvent, useState } from "react";
 import Icon from "./Icon";
 import { useFetchUser } from "../hooks/useFetchUser";
 
@@ -7,7 +7,7 @@ function SearchBox() {
 
   let apiEndpoint = "https://api.github.com/users/" + userName;
 
-  const { loadUser } = useFetchUser(apiEndpoint);
+  const { error, loadUser } = useFetchUser(apiEndpoint);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setUserName(event.target.value);
@@ -47,10 +47,14 @@ function SearchBox() {
           onKeyDown={handleKeyPress}
         />
       </div>
-
-      <button className="searchBtn" onClick={handleButtonClick}>
-        Search
-      </button>
+      <div className={error?.error === "userNotFound" ? "errorMessage" : "hidden"}>
+        No results
+      </div>
+      <div className="btn-container">
+        <button className="searchBtn" onClick={handleButtonClick}>
+          Search
+        </button>
+      </div>
     </form>
   );
 }

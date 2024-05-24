@@ -88,8 +88,12 @@
     .item-name{
       font-size: .93rem;
       color: $greyBlue;
+      text-decoration: none;
     }
     .item-icon{
       margin-right: 1.3rem;
     }
+}
+.half-transparent{
+  opacity:.5;
 }

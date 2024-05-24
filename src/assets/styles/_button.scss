@@ -45,3 +45,15 @@
 
   }
 }
+.btn-container{
+  flex-basis: 20%;
+  display: flex;
+  justify-content: center;
+}
+.errorMessage{
+  width:17%;
+  color:$error;
+}
+.hidden{
+  display: none;
+}

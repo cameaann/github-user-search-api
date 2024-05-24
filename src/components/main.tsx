@@ -5,6 +5,7 @@ import SearchBox from "./searchBox";
 import { Switch } from "./switch";
 
 export interface User {
+  id: number;
   nickname?: string;
   avatar?: string;
   created?: string;
@@ -25,6 +26,7 @@ export interface UserContextType {
 }
 
 const defaultUser: User = {
+  id: 583231,
   nickname: "Octopat",
   avatar: "https://avatars.githubusercontent.com/u/583231?v=4",
   created: "25 Jan 2011",
