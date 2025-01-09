@@ -1,16 +1,14 @@
-@import 'variables.scss';
+@import "variables.scss";
 
 .profile-info {
   width: 39.625rem;
-  height: 20.1875rem;
   padding: 3rem;
   flex-shrink: 0;
   border-radius: 0.9375rem;
   background: $whiteVar;
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
-  display: grid;
-  grid-template-columns: 30% 70%;
-
+  display: flex;
+  justify-content: space-between;
 
   .avatar {
     width: 7.3125rem;
@@ -18,25 +16,22 @@
     border-radius: 50%;
     flex-shrink: 0;
   }
-  .details {
 
-  }
 }
 
-.box-header {
+.profile-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 .nickname {
-  font-size: 1.625rem;
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  color:$darkGrey;
+  color: $darkGrey;
 }
 .date {
-  color:$grey;
+  color: $grey;
 }
 .nickteg {
   font-size: 1rem;
@@ -44,33 +39,29 @@
   margin-bottom: 1.25rem;
 }
 .biographi {
-  font-size: .9375rem;
+  font-size: 0.9375rem;
   font-weight: 400;
   opacity: 0.75;
-  color:$greyBlue;
+  color: $greyBlue;
   margin-bottom: 2rem;
 }
 .activity {
   width: 25.12rem;
-  padding: 0.94rem 2rem;
-  height: 3.4325rem;
-  flex-shrink: 0;
+  padding: 1rem 2rem;
   border-radius: 0.625rem;
   background: #f6f8ff;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-row: auto;
   margin-bottom: 2.31rem;
 
-  .activity-name{
-    font-size: 0.8125rem;
-    color:$greyBlue;
+  .activity-name {
+    font-size: 0.8rem;
+    color: $greyBlue;
+    text-align: start;
   }
 
   .count {
     color: $darkGrey;
     font-family: Space Mono;
-    font-size: 1.375rem;
+    font-size: 1.4rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -78,22 +69,73 @@
   }
 }
 .social-media {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    grid-template-rows: auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  grid-template-rows: auto;
 
-    .social-item{
-      margin-bottom: 1.19rem;
-    }
-    .item-name{
-      font-size: .93rem;
-      color: $greyBlue;
-      text-decoration: none;
-    }
-    .item-icon{
-      margin-right: 1.3rem;
-    }
+  .social-item {
+    margin-bottom: 1.19rem;
+  }
+  .item-name {
+    font-size: 0.93rem;
+    color: $greyBlue;
+    text-decoration: none;
+  }
+  .item-icon {
+    margin-right: 1.3rem;
+  }
 }
-.half-transparent{
-  opacity:.5;
+.half-transparent {
+  opacity: 0.5;
+}
+
+
+@media screen and (max-width: 768px) {
+  .nickname,
+  .date {
+    font-size: 1.2rem;
+  }
+  .activity-name {
+    font-size: 1.2rem;
+  }
+}
+
+
+@media screen and (max-width: 426px) {
+  .profile-info {
+    width: -webkit-fill-available;
+    padding: 1rem;
+    flex-direction: column;
+  }
+  .profile-header {
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+
+  .header {
+    margin-bottom: 1rem;
+  }
+  .biographi {
+    margin-bottom: 0;
+  }
+  .nickname,
+  .date {
+    font-size: 1.2rem;
+  }
+
+  .social-media {
+    grid-template-columns: 1fr;
+  }
+  .activity {
+    padding: .5rem 1rem;
+    width: -webkit-fill-available;
+
+    .activity-name {
+      font-size: 1.4rem;
+    }
+  }
+  .details{
+    width:100%;
+  }
+
 }
