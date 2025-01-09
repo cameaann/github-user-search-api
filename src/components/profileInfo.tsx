@@ -1,15 +1,17 @@
+import { useMediaQuery } from "usehooks-ts";
 import Icon from "./Icon";
 import { Suspense } from "react";
-import { User } from "./main";
+import ProfileHeader from "./profileHeader";
 
 function ProfileInfo(props: any) {
+  const isMobile = useMediaQuery("(max-width: 426px)");
   let user = props.user;
 
   function formatInfo(value: string | null) {
     return !value || value.length === 0 ? "Not Available" : value;
   }
 
-  function addOpacity(value: string | null){
+  function addOpacity(value: string | null) {
     return !value || value.length === 0 ? "half-transparent" : "";
   }
 
@@ -33,80 +35,108 @@ function ProfileInfo(props: any) {
   }
 
   return (
-  <Suspense fallback={<Loading />}>
-    <div>
+    <Suspense fallback={<Loading />}>
+      {/* <div> */}
       <div className="profile-info">
-        <img className="avatar" src={user.avatar} alt="avatar" />
+        <div className="profile-header">
+          <img className="avatar" src={user.avatar} alt="avatar" />
+          {isMobile ? (
+            <ProfileHeader user={user} date={formatDate(user.created)} />
+          ) : null}
+        </div>
+
         <div className="details">
-          <div className="box-header">
-            <h3 className="nickname">
-              The {user.nickname === null ? user.nickteg : user.nickname}
-            </h3>
-            <span className="date">Joined {formatDate(user.created)}</span>
-          </div>
-          <div className="nickteg">@{user.nickteg}</div>
-          <div className="biographi">
-            {user.biography === null
-              ? "This profile has no bio"
-              : user.biography}{" "}
-          </div>
-          <div className="activity">
+          {!isMobile ? (
+            <ProfileHeader user={user} date={formatDate(user.created)} />
+          ) : null}
+
+          {/* <div className="activity">
             <div className="activiti-name">Repos</div>
             <div className="activiti-name">Folowers</div>
             <div className="activiti-name">Following</div>
             <div className="count">{user.repos}</div>
             <div className="count">{user.followers}</div>
             <div className="count">{user.following}</div>
-          </div>
+          </div> */}
+
+          <table className="activity">
+            <thead>
+              <tr>
+                <th className="activity-name">Repos</th>
+                <th className="activity-name">Followers</th>
+                <th className="activity-name">Following</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="count">{user.repos}</td>
+                <td className="count">{user.followers}</td>
+                <td className="count">{user.following}</td>
+              </tr>
+            </tbody>
+          </table>
           <div className="social-media">
             <div className="social-item">
               <Icon
-                className={ "item-icon icon-pin " + addOpacity(user.location)}
+                className={"item-icon icon-pin " + addOpacity(user.location)}
                 icon="pin"
                 size={16}
                 color="#4b6a9b"
               ></Icon>
-              <span className= { 'item-icon item-name ' + addOpacity(user.location)}>
+              <span
+                className={"item-icon item-name " + addOpacity(user.location)}
+              >
                 {formatInfo(user.location)}
               </span>
             </div>
             <div className="social-item">
               <Icon
-                className={ "item-icon icon-twitter " + addOpacity(user.twitter_username)}
+                className={
+                  "item-icon icon-twitter " + addOpacity(user.twitter_username)
+                }
                 icon="twitter"
                 size={16}
                 color="#4b6a9b"
               ></Icon>
-              <span className= { 'item-name ' + addOpacity(user.twitter_username)} >
+              <span
+                className={"item-name " + addOpacity(user.twitter_username)}
+              >
                 {formatInfo(user.twitter_username)}
               </span>
             </div>
             <div className="social-item">
               <Icon
-                className= { "item-icon icon-url " + addOpacity(user.blog)}
+                className={"item-icon icon-url " + addOpacity(user.blog)}
                 icon="url"
                 size={16}
                 color="#4b6a9b"
               ></Icon>
               <span>
-                <a className= { 'item-name ' + addOpacity(user.blog)} href={user.blog}>
+                <a
+                  className={"item-name " + addOpacity(user.blog)}
+                  href={user.blog}
+                >
                   {formatInfo(user.blog)}
                 </a>
               </span>
             </div>
             <div className="social-item">
               <Icon
-                className = { "item-icon icon-office-building " + addOpacity(user.company)}
+                className={
+                  "item-icon icon-office-building " + addOpacity(user.company)
+                }
                 icon="office-building"
                 size={16}
                 color="#4b6a9b"
               ></Icon>
-              <span className= { 'item-name ' + addOpacity(user.company)}>{formatInfo(user.company)}</span>
+              <span className={"item-name " + addOpacity(user.company)}>
+                {formatInfo(user.company)}
+              </span>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      {/* </div> */}
     </Suspense>
   );
 }

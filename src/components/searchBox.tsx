@@ -1,9 +1,12 @@
 import { ChangeEvent, useState } from "react";
 import Icon from "./Icon";
 import { useFetchUser } from "../hooks/useFetchUser";
+import SearchButton from "./searchButton";
+import { useMediaQuery } from "usehooks-ts";
 
 function SearchBox() {
   const [userName, setUserName] = useState<string>("");
+  const isMobile = useMediaQuery("(max-width: 426px)");
 
   let apiEndpoint = "https://api.github.com/users/" + userName;
 
@@ -30,30 +33,38 @@ function SearchBox() {
 
   return (
     <form className="search-container" onSubmit={handleFormSubmit}>
-      <div className="search-box">
-        <Icon
-          className="item-icon icon-search"
-          icon="search"
-          size={16}
-          color="#4b6a9b"
-          fill="#0079FF"
-        ></Icon>
-        <input
-          className="input-search"
-          type="text"
-          placeholder="Search Github username"
-          value={userName}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyPress}
-        />
+      <div className="search-formfield">
+        <div className="search-box">
+          {!isMobile ? (
+            <Icon
+              className="item-icon icon-search"
+              icon="search"
+              size={16}
+              color="#4b6a9b"
+              fill="#0079FF"
+            ></Icon>
+          ) : null}
+
+          <input
+            className="input-search"
+            type="text"
+            placeholder="Search Github username"
+            value={userName}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyPress}
+          />
+        </div>
+        <div
+          className={
+            error?.error === "userNotFound" ? "errorMessage" : "hidden"
+          }
+        >
+          No results
+        </div>
       </div>
-      <div className={error?.error === "userNotFound" ? "errorMessage" : "hidden"}>
-        No results
-      </div>
+
       <div className="btn-container">
-        <button className="searchBtn" onClick={handleButtonClick}>
-          Search
-        </button>
+        <SearchButton onClick={handleButtonClick} />
       </div>
     </form>
   );
