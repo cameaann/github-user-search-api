@@ -1,30 +1,38 @@
 @import "variables.scss";
 
 .profile-info {
-  width: 39.625rem;
   padding: 3rem;
   flex-shrink: 0;
   border-radius: 0.9375rem;
   background: $whiteVar;
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
   display: flex;
-  justify-content: space-between;
+  gap: 3.7rem;
 
   .avatar {
-    width: 7.3125rem;
-    height: 7.3125rem;
+    width: 11.7rem;
+    height: 11.7rem;
     border-radius: 50%;
     flex-shrink: 0;
+    padding: 1rem;
   }
-
 }
-
+.details {
+  width: -webkit-fill-available;
+  // margin-top: 2rem;
+}
 .profile-header {
   display: flex;
   justify-content: space-between;
 }
+.box-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
 .nickname {
-  font-size: 1.6rem;
+  font-size: 2.6rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -34,26 +42,25 @@
   color: $grey;
 }
 .nickteg {
-  font-size: 1rem;
+  font-size: 1.6rem;
   color: $blue;
-  margin-bottom: 1.25rem;
 }
 .biographi {
-  font-size: 0.9375rem;
+  font-size: 1.5rem;
   font-weight: 400;
   opacity: 0.75;
   color: $greyBlue;
-  margin-bottom: 2rem;
+  margin-bottom: 3.2rem;
 }
 .activity {
-  width: 25.12rem;
+  width: 90%;
   padding: 1rem 2rem;
   border-radius: 0.625rem;
   background: #f6f8ff;
-  margin-bottom: 2.31rem;
+  margin-bottom: 3.7rem;
 
   .activity-name {
-    font-size: 0.8rem;
+    font-size: 1.3rem;
     color: $greyBlue;
     text-align: start;
   }
@@ -61,7 +68,7 @@
   .count {
     color: $darkGrey;
     font-family: Space Mono;
-    font-size: 1.4rem;
+    font-size: 2.2rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -72,12 +79,13 @@
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   grid-template-rows: auto;
+  column-gap: 3rem;
 
   .social-item {
     margin-bottom: 1.19rem;
   }
   .item-name {
-    font-size: 0.93rem;
+    font-size: 1.5rem;
     color: $greyBlue;
     text-decoration: none;
   }
@@ -89,34 +97,63 @@
   opacity: 0.5;
 }
 
-
 @media screen and (max-width: 768px) {
+    .profile-header {
+    justify-content: flex-start;
+    gap: 2rem;
+    & > .header {
+      align-content: center;
+    }
+  }
+  .box-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .nickname,
   .date {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   .activity-name {
     font-size: 1.2rem;
   }
+
+  .profile-info {
+    width: -webkit-fill-available;
+    flex-direction: column;
+    gap: 2rem;
+    .avatar {
+      width: 10rem;
+      height: 10rem;
+      padding: 1rem;
+    }
+  }
 }
 
-
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 431px) {
   .profile-info {
     width: -webkit-fill-available;
     padding: 1rem;
     flex-direction: column;
+    .avatar {
+      width: 8rem;
+      height: 8rem;
+      padding: 1.5rem;
+    }
   }
   .profile-header {
     justify-content: flex-start;
     gap: 2rem;
+    & > .header {
+      align-content: center;
+    }
   }
-
+  .box-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+  }
   .header {
     margin-bottom: 1rem;
-  }
-  .biographi {
-    margin-bottom: 0;
   }
   .nickname,
   .date {
@@ -127,15 +164,18 @@
     grid-template-columns: 1fr;
   }
   .activity {
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     width: -webkit-fill-available;
 
     .activity-name {
       font-size: 1.4rem;
+      text-align: center;
+    }
+    .count {
+      text-align: center;
     }
   }
-  .details{
-    width:100%;
+  .details {
+    width: -webkit-fill-available;
   }
-
 }

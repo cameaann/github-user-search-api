@@ -4,7 +4,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-size: 1.6rem;
+  font-size: 10px;
 }
 
 :root {
@@ -22,34 +22,30 @@ body {
   font-size: 1.6rem;
 }
 
-main {
-  height: 100vh;
-  width: 100%;
-}
-
 .container-wrap {
-  width: 45.625rem;
+  width: 73rem;
   flex-shrink: 0;
   margin: 0 auto;
   padding-top: 5rem;
   min-width: 300px;
+  height: 100vh;
 }
 .app-header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2.25rem;
+  align-items: baseline;
 
   &-title {
     color: #222731;
     font-family: Space Mono;
-    font-size: 1.625rem;
+    font-size: 2.6rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
   }
 }
 .search-container {
-  width: 41.5rem;
   padding: 1rem 2rem;
   flex-shrink: 0;
   border-radius: 0.9375rem;
@@ -63,13 +59,14 @@ main {
 .search-box {
   display: flex;
   align-items: center;
-  width:80%;
+  width: 80%;
 
   .icon-search {
     margin-right: 1rem;
+    margin-left: 1rem;
     font-size: 1.5rem;
-    width: 1.50363rem;
-    height: 1.5rem;
+    width: 2.4rem;
+    height: 2.4rem;
     flex-shrink: 0;
 
     path {
@@ -83,9 +80,9 @@ main {
 
 .input-search {
   border: none;
-  font-size: 1.25rem;
+  font-size: 1.8rem;
   color: $greyBlue;
-  width:100%;
+  width: 100%;
 
   &::placeholder {
     color: $greyBlue;
@@ -97,11 +94,11 @@ main {
     outline: none;
   }
 }
-.search-formfield{
+.search-formfield {
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap:1rem;
+  gap: 1rem;
 }
 .theme {
   background: $black;
@@ -180,6 +177,9 @@ main {
 }
 
 @media screen and (max-width: 768px) {
+  .container-wrap {
+    width: 80%;
+  }
   .app-header {
     &-title,
     .btn-word {
@@ -210,14 +210,14 @@ main {
   .search-box {
     margin-inline-start: 0;
   }
-  .search-formfield{
+  .search-formfield {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap:0;
+    gap: 0;
   }
-  .input-search{
+  .input-search {
     width: 100%;
+    font-size: 1.2rem;
   }
-
 }

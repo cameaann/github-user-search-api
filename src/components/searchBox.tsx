@@ -6,7 +6,7 @@ import { useMediaQuery } from "usehooks-ts";
 
 function SearchBox() {
   const [userName, setUserName] = useState<string>("");
-  const isMobile = useMediaQuery("(max-width: 426px)");
+  const isMobile = useMediaQuery("(max-width: 600px)");
 
   let apiEndpoint = "https://api.github.com/users/" + userName;
 
@@ -48,7 +48,7 @@ function SearchBox() {
           <input
             className="input-search"
             type="text"
-            placeholder="Search Github username"
+            placeholder={isMobile ? "Search username" : "Search Github username"}
             value={userName}
             onChange={handleInputChange}
             onKeyDown={handleKeyPress}

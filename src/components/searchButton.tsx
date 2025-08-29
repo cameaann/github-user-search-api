@@ -7,7 +7,7 @@ interface SearchButtonProps {
 }
 
 const SearchButton: React.FC<SearchButtonProps> = ({ onClick }) => {
-  const isMobile = useMediaQuery("(max-width: 426px)");
+  const isMobile = useMediaQuery("(max-width: 600px)");
   return (
     <button onClick={onClick} className={ isMobile ? "searchBtn mobile" :"searchBtn"}>
       {!isMobile ? (

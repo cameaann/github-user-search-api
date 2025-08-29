@@ -15,6 +15,7 @@
 
   &-word {
     margin-right: 1rem;
+    font-size: 1.3rem;
   }
   &>.icon-moon,
   &>.icon-sun{
@@ -29,12 +30,12 @@
 
 .searchBtn {
   width: 6.625rem;
-  padding: .5rem 1rem;
+  padding: 1rem 1.5rem;
   flex-shrink: 0;
   border-radius: 0.625rem;
   background: #0079ff;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -64,7 +65,9 @@
 @media screen and (max-width: 426px) {
   .searchBtn {
     width: 5rem;
+    padding: .5rem 1rem;
   }
+
   .btn-container{
     margin-right: .5rem;
   }
